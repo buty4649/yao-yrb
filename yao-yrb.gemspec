@@ -4,22 +4,22 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "yao/yrb/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "yrb"
+  spec.name          = "yao-yrb"
   spec.version       = Yao::Yrb::VERSION
   spec.authors       = ["Yuki Koya"]
   spec.email         = ["buty4649@gmail.com"]
 
   spec.summary       = %q{irb with yao}
   spec.description   = %q{irb with yao (https://github.com/yaocloud/yao)}
-  spec.homepage      = "https://github.com/buty4649/yrb"
+  spec.homepage      = "https://github.com/buty4649/yao-yrb"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
 
     spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = "https://github.com/buty4649/yrb"
-    spec.metadata["changelog_uri"] = "https://github.com/buty4649/yrb"
+    spec.metadata["source_code_uri"] = "https://github.com/buty4649/yao-yrb"
+    spec.metadata["changelog_uri"] = "https://github.com/buty4649/yao-yrb"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
