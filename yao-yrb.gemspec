@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "yrb/version"
+require "yao/yrb/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "yrb"
-  spec.version       = Yrb::VERSION
+  spec.version       = Yao::Yrb::VERSION
   spec.authors       = ["Yuki Koya"]
   spec.email         = ["buty4649@gmail.com"]
 
