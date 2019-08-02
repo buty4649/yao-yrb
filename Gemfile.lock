@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    yrb (0.1.0)
+    yao-yrb (0.1.0)
       yao
 
 GEM
@@ -27,7 +27,7 @@ DEPENDENCIES
   bundler (~> 2.0)
   minitest (~> 5.0)
   rake (~> 10.0)
-  yrb!
+  yao-yrb!
 
 BUNDLED WITH
-   2.0.1
+   2.0.2
