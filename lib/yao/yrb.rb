@@ -16,6 +16,7 @@ module Yao
         user_domain_name     ENV['OS_USER_DOMAIN_NAME']
         project_domain_name  ENV['OS_PROJECT_DOMAIN_NAME']
         debug                ENV['YAO_DEBUG']
+        debug_record_response ENV['YAO_DEBUG_RECORD_RESPONSE']
       end
 
       IRB.setup('yao')
