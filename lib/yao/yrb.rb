@@ -1,4 +1,5 @@
 require 'irb'
+require 'irb/completion'
 require 'yao'
 
 module Yao
