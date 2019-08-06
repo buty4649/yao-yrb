@@ -1,5 +1,7 @@
 require 'irb'
 require 'irb/completion'
+require 'irb/ext/save-history'
+
 require 'yao'
 
 module Yao
@@ -28,7 +30,9 @@ module Yao
         :PROMPT_C => 'yao(%m):%03n:%i* ',
           :RETURN => "=> %s\n",
       }}
-      IRB.conf[:PROMPT_MODE] = :YAO
+      IRB.conf[:PROMPT_MODE]  = :YAO
+      IRB.conf[:SAVE_HISTORY] = 1000
+      IRB.conf[:HISTORY_FILE] = File.expand_path('~/.yrb_history')
       IRB::Irb.new.run(IRB.conf)
     end
   end
