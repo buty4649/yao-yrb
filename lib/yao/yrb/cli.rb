@@ -6,6 +6,11 @@ require 'yao'
 
 module Yao::Yrb
   class Cli < Clamp::Command
+    option '--version', :flag, 'Show version' do
+      puts Yao::Yrb::VERSION
+      exit(0)
+    end
+
     def execute
       Yao.configure do
         auth_url              ENV['OS_AUTH_URL']
