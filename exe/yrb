@@ -3,4 +3,4 @@
 require 'rubygems'
 require 'yao/yrb'
 
-Yao::Yrb.run
+Yao::Yrb::Cli.run
