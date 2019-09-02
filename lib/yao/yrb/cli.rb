@@ -1,8 +1,6 @@
-require 'irb'
-require 'irb/completion'
-require 'irb/ext/save-history'
 require 'clamp'
 require 'yao'
+require 'pry'
 
 # [HACK] allow optional and multivalued parameters
 original_verbosity = $VERBOSE
@@ -40,18 +38,9 @@ module Yao::Yrb
         script_file = script_mode.first
         load script_file
       else
-        IRB.setup('yao')
-        IRB.conf[:PROMPT] = { :YAO => {
-          :PROMPT_I => 'yao(%m):%03n:%i> ',
-          :PROMPT_N => 'yao(%m):%03n:%i> ',
-          :PROMPT_S => 'yao(%m):%03n:%i%l ',
-          :PROMPT_C => 'yao(%m):%03n:%i* ',
-            :RETURN => "=> %s\n",
-        }}
-        IRB.conf[:PROMPT_MODE]  = :YAO
-        IRB.conf[:SAVE_HISTORY] = 1000
-        IRB.conf[:HISTORY_FILE] = File.expand_path('~/.yrb_history')
-        IRB::Irb.new.run(IRB.conf)
+        opts = Pry::CLI.parse_options([])
+        Pry.config.prompt_name = "yao"
+        Pry::CLI.start(opts)
       end
 
     end
