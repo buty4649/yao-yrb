@@ -36,7 +36,7 @@ module Yao::Yrb
         debug_record_response ENV['YAO_DEBUG_RECORD_RESPONSE']
       end
 
-      if script_mode
+      if script_mode.size > 0
         script_file = script_mode.first
         load script_file
       else
