@@ -1,4 +1,4 @@
-$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
-require "yrb"
+$LOAD_PATH.unshift File.expand_path('../lib', __dir__)
+require 'yrb'
 
-require "minitest/autorun"
+require 'minitest/autorun'
