@@ -22,7 +22,7 @@ module Yao
       def execute
         yao_setup
 
-        if script_mode.size
+        if script_mode.size.positive?
           script_file = script_mode.first
           load script_file
         else
