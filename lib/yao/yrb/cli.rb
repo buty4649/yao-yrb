@@ -40,10 +40,11 @@ module Yao::Yrb
         load script_file
       else
         IRB.setup(__FILE__)
+        conf = IRB.conf
+        conf[:AP_NAME] = 'yrb'
+        conf[:IRB_NAME] = 'yrb'
         irb = IRB::Irb.new
-        irb.context.ap_name = 'yrb'
-        irb.context.irb_name = 'yrb'
-        irb.run
+        irb.run(conf)
       end
 
     end
