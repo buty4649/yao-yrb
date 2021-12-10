@@ -1,6 +1,6 @@
 require 'clamp'
 require 'yao'
-require 'pry'
+require 'irb'
 
 # [HACK] allow optional and multivalued parameters
 original_verbosity = $VERBOSE
@@ -39,9 +39,12 @@ module Yao::Yrb
         script_file = script_mode.first
         load script_file
       else
-        opts = Pry::CLI.parse_options([])
-        Pry.config.prompt_name = "yao"
-        Pry::CLI.start(opts)
+        IRB.setup(__FILE__)
+        conf = IRB.conf
+        conf[:AP_NAME] = 'yrb'
+        conf[:IRB_NAME] = 'yrb'
+        irb = IRB::Irb.new
+        irb.run(conf)
       end
 
     end
